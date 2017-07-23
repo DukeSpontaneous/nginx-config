@@ -1,5 +1,11 @@
-﻿bind = "0.0.0.0:8080"
-workers = 4
-pythonpath = "/home/box/web"
-errorlog = "/home/box/web/etc/error.log"
-loglevel = "debug"
+﻿CONFIG = {
+	'mode': 'wsgi',
+	'working_dir': '/home/box/hello.py',
+	
+	'args': (
+	'--bind=0.0.0.0:8080',
+	'--workers=16',
+	'--timeout=60',
+	'hello.app',
+	),
+}
